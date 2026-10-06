@@ -10,7 +10,7 @@
 
 <body>
 
-<a-scene>
+<a-scene shadow="type: pcfsoft">
 
     <a-assets>
         <!-- 3D schelp -->
@@ -19,6 +19,12 @@
         <!-- Schelp geluid -->
         <audio id="schelpGeluid" src="shell.mp3" preload="auto"></audio>
     </a-assets>
+
+
+    <!-- Licht -->
+    <a-entity light="type: ambient; intensity: 0.6"></a-entity>
+    <a-entity light="type: directional; intensity: 0.8; castShadow: true" position="2 4 1"></a-entity>
+    <a-entity light="type: point; intensity: 0.7; distance: 12" position="0 3 -2"></a-entity>
 
 
     <!-- Lucht -->
@@ -31,7 +37,8 @@
         rotation="-90 0 0"
         width="30"
         height="30"
-        color="#E8C66A">
+        color="#E8C66A"
+        shadow="receive: true">
     </a-plane>
 
 
@@ -41,7 +48,8 @@
         rotation="-90 0 0"
         width="30"
         height="10"
-        color="#249BD8">
+        color="#249BD8"
+        shadow="receive: true">
     </a-plane>
 
 
@@ -49,7 +57,8 @@
     <a-sphere
         position="6 7 -15"
         radius="1.2"
-        color="#FFD43B">
+        color="#FFD43B"
+        shadow="cast: true">
     </a-sphere>
 
 
@@ -61,6 +70,7 @@
         rotation="0 30 0"
         scale="12 12 12"
         sound="src: #schelpGeluid"
+        shadow="cast: true; receive: true"
         interactief-object>
     </a-entity>
 
@@ -69,13 +79,15 @@
     <a-sphere
         position="-3 0.25 -5"
         scale="0.7 0.3 0.5"
-        color="#777777">
+        color="#777777"
+        shadow="cast: true; receive: true">
     </a-sphere>
 
     <a-sphere
         position="3 0.2 -6"
         scale="0.5 0.25 0.4"
-        color="#888888">
+        color="#888888"
+        shadow="cast: true; receive: true">
     </a-sphere>
 
 
